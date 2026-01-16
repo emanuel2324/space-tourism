@@ -1,0 +1,210 @@
+/* HEADER - Menu fixo no topo */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 30px 40px;
+  display: flex;
+  justify-content: space-between; /* Logo à esquerda, nav à direita */
+  align-items: center;
+  z-index: 100;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+  backdrop-filter: blur(10px);
+}
+
+/* Logo */
+.logo {
+  height: 40px;
+  width: auto;
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.5));
+  flex-shrink: 0;
+}
+
+/* Menu de navegação - ajustado para direita com números */
+nav {
+  display: flex;
+  gap: 40px; /* Mais espaço entre os itens para os números */
+  margin-right: 60px; /* Move o nav mais para direita */
+}
+
+/* Links do menu com números */
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 2px;
+  position: relative;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  transition: 0.3s;
+  white-space: nowrap;
+  font-family: 'Barlow Condensed', sans-serif; /* Fonte comum para designs espaciais */
+}
+
+/* Números antes dos links (opcional, se estiverem no HTML) */
+nav a::before {
+  content: attr(data-number); /* Se usar data-number="00" no HTML */
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+/* Efeito hover nos links */
+nav a:hover {
+  opacity: 0.8;
+  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.3);
+}
+
+/* Linha indicadora ativa */
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: width 0.3s;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+/* Botão hamburger - oculto por padrão (desktop) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 6px;
+  z-index: 101;
+  margin-left: auto;
+  padding: 15px;
+  position: relative;
+  margin-right: 10px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  transform: translateZ(0);
+}
+
+.hamburger:focus {
+  outline: none;
+}
+
+.hamburger:active {
+  transform: translateZ(0);
+}
+
+.hamburger span {
+  width: 30px;
+  height: 3px;
+  background: white;
+  transition: 0.3s;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  display: block;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+
+body {
+  padding-top: 100px;
+  margin: 0;
+  font-family: 'Bellefair', serif; /* Fonte para o conteúdo principal */
+}
+
+/* Media Query - Mobile */
+@media (max-width: 768px) {
+  .header {
+    padding: 20px 25px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  nav {
+    position: fixed;
+    top: 100px;
+    right: 0;
+    width: 100%;
+    max-width: 200px;
+    height: calc(100vh - 100px);
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px 25px;
+    margin-right: 0;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  nav.open {
+    transform: translateX(0);
+  }
+
+  nav a {
+    font-size: 16px;
+    letter-spacing: 2.7px;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  nav a::after {
+    display: none;
+  }
+
+  nav a:hover {
+    margin-left: 10px;
+    opacity: 1;
+  }
+
+  .logo {
+    height: 35px;
+  }
+
+  body {
+    padding-top: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 15px 20px;
+  }
+
+  nav {
+    max-width: 180px;
+    padding: 30px 20px;
+    top: 80px;
+    height: calc(100vh - 80px);
+  }
+
+  nav a {
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+  .logo {
+    height: 30px;
+  }
+
+  body {
+    padding-top: 70px;
+  }
+}

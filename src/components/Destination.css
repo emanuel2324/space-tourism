@@ -1,0 +1,171 @@
+.destination {
+  min-height: 100vh;
+  padding: 160px 10%;
+  background: url("../assets/destination/background-destination-desktop.jpg") no-repeat center/cover;
+  color: white;
+}
+
+.destination-title {
+  letter-spacing: 4px;
+  margin-bottom: 80px;
+}
+
+.destination-title span {
+  opacity: 0.3;
+  margin-right: 20px;
+}
+
+.destination-content {
+  display: flex;
+  align-items: center;
+  gap: 120px;
+}
+
+.destination-content img {
+  width: 400px;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+.destination-tabs {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.destination-tabs button {
+  background: none;
+  border: none;
+  color: #d0d6f9;
+  letter-spacing: 2px;
+  cursor: pointer;
+  position: relative;
+}
+
+.destination-tabs button.active::after,
+.destination-tabs button:hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: white;
+  left: 0;
+  bottom: -10px;
+}
+
+.destination-info h1 {
+  font-size: 100px;
+  margin-bottom: 20px;
+}
+
+.destination-info p {
+  max-width: 450px;
+  line-height: 1.7;
+  color: #d0d6f9;
+}
+
+.destination-stats {
+  display: flex;
+  gap: 80px;
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 1px solid #383b4b;
+}
+
+.destination-stats span {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #d0d6f9;
+}
+
+.destination-stats strong {
+  display: block;
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .destination {
+    padding: 90px 6% 40px; /* menos espaço em cima */
+    text-align: center;
+  }
+
+  .destination-title {
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+  }
+
+  .destination-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px; /* mais compacto */
+  }
+
+  /* IMAGEM (fica pequena como no design) */
+  .destination-image img {
+    width: 140px;
+    margin: 10px auto 0;
+  }
+
+  /* TABS (tem que ficar entre a imagem e o título) */
+  .destination-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin: 15px 0 5px;
+  }
+
+  .destination-tabs button {
+    font-size: 12px;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+  }
+
+  /* TITULO MOON */
+  .destination-info h1 {
+    font-size: 56px;
+    margin: 10px 0 10px;
+    line-height: 1;
+  }
+
+  /* TEXTO */
+  .destination-info p {
+    font-size: 14px;
+    line-height: 1.7;
+    max-width: 300px;
+    margin: 0 auto;
+    color: #d0d6f9;
+  }
+
+  /* LINHA DIVISÓRIA */
+  .destination-stats {
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin: 30px auto 0;
+    padding-top: 25px;
+    border-top: 1px solid #383b4b;
+  }
+
+  .destination-stats span {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #d0d6f9;
+  }
+
+  .destination-stats strong {
+    font-size: 18px;
+    margin-top: 8px;
+    display: block;
+  }
+}

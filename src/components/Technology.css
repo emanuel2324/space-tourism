@@ -1,0 +1,109 @@
+.technology {
+  min-height: 100vh;
+  padding: 160px 0 0 10%;
+  background: url("../assets/technology/background-technology-desktop.jpg") no-repeat center/cover;
+  color: white;
+}
+
+.technology-title {
+  letter-spacing: 4px;
+  margin-bottom: 80px;
+}
+
+.technology-title span {
+  opacity: 0.3;
+  margin-right: 20px;
+}
+
+.technology-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+.technology-left {
+  display: flex;
+  gap: 60px;
+}
+
+.technology-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.technology-nav button {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #555;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.technology-nav button.active,
+.technology-nav button:hover {
+  background: white;
+  color: black;
+}
+
+.technology-info span {
+  letter-spacing: 2px;
+  color: #d0d6f9;
+}
+
+.technology-info h1 {
+  font-size: 56px;
+  margin: 20px 0;
+}
+
+.technology-info p {
+  max-width: 450px;
+  line-height: 1.7;
+  color: #d0d6f9;
+}
+
+.technology-image img {
+  width: 500px;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* Responsive Styles */
+@media (max-width: 900px) {
+  .technology {
+    padding: 120px 10% 0;
+    text-align: center;
+  }
+
+  .technology-content {
+    flex-direction: column-reverse;
+  }
+
+  .technology-left {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .technology-nav {
+    flex-direction: row;
+  }
+
+  .technology-image img {
+    width: 100%;
+    max-width: 400px;
+  }
+}
