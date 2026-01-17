@@ -1,28 +1,34 @@
 import { useState } from "react";
 import "./Technology.css";
 
-import launch from "../assets/technology/image-launch-vehicle-landscape.jpg";
-import spaceport from "../assets/technology/image-spaceport-landscape.jpg";
-import capsule from "../assets/technology/image-space-capsule-landscape.jpg";
+import launchPortrait from "../assets/technology/image-launch-vehicle-portrait.jpg";
+import launchLandscape from "../assets/technology/image-launch-vehicle-landscape.jpg";
+import spaceportPortrait from "../assets/technology/image-spaceport-portrait.jpg";
+import spaceportLandscape from "../assets/technology/image-spaceport-landscape.jpg";
+import capsulePortrait from "../assets/technology/image-space-capsule-portrait.jpg";
+import capsuleLandscape from "../assets/technology/image-space-capsule-landscape.jpg";
 
 const technologies = [
   {
     name: "Launch vehicle",
     description:
       "A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space.",
-    image: launch,
+    imageDesktop: launchPortrait,
+    imageMobile: launchLandscape,
   },
   {
     name: "Spaceport",
     description:
       "A spaceport or cosmodrome is a site for launching spacecraft, by analogy to seaport for ships or airport for aircraft.",
-    image: spaceport,
+    imageDesktop: spaceportPortrait,
+    imageMobile: spaceportLandscape,
   },
   {
     name: "Space capsule",
     description:
       "A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to reenter the Earth's atmosphere.",
-    image: capsule,
+    imageDesktop: capsulePortrait,
+    imageMobile: capsuleLandscape,
   },
 ];
 
@@ -58,7 +64,16 @@ export default function Technology() {
         </div>
 
         <div className="technology-image">
-          <img src={tech.image} alt={tech.name} />
+          <img 
+            src={tech.imageDesktop} 
+            alt={tech.name}
+            className="desktop-image"
+          />
+          <img 
+            src={tech.imageMobile} 
+            alt={tech.name}
+            className="mobile-image"
+          />
         </div>
       </div>
     </main>
