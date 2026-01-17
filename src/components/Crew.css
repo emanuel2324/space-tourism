@@ -67,9 +67,9 @@
 }
 
 .crew-dots {
-  display: none;
+  display: flex;
   gap: 20px;
-  margin-top: 60px;
+  margin-top: 80px;
 }
 
 .crew-dots button {
@@ -77,8 +77,9 @@
   height: 15px;
   border-radius: 50%;
   border: none;
-  background: #383b4b;
+  background: rgba(255, 255, 255, 0.17);
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 .crew-dots button.active,
