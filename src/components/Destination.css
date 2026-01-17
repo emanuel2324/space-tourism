@@ -92,7 +92,7 @@
 /* Responsive Styles */
 @media (max-width: 768px) {
   .destination {
-    padding: 90px 6% 40px; /* menos espaço em cima */
+    padding: 90px 6% 40px;
     text-align: center;
   }
 
@@ -106,66 +106,96 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 18px; /* mais compacto */
+    gap: 26px;
   }
 
-  /* IMAGEM (fica pequena como no design) */
   .destination-image img {
-    width: 140px;
-    margin: 10px auto 0;
+    width: 170px;
+    margin: 0 auto;
   }
 
-  /* TABS (tem que ficar entre a imagem e o título) */
-  .destination-tabs {
+  .destination-info {
     display: flex;
-    justify-content: center;
-    gap: 18px;
-    margin: 15px 0 5px;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .destination-tabs {
+    order: 1 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    gap: 26px !important;
+    margin: 0 0 20px 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    width: 100% !important;
+    height: auto !important;
   }
 
   .destination-tabs button {
-    font-size: 12px;
-    letter-spacing: 2px;
-    padding-bottom: 10px;
+    background: none !important;
+    border: none !important;
+    color: #d0d6f9 !important;
+    font-size: 14px !important;
+    letter-spacing: 2.36px !important;
+    padding: 0 0 8px 0 !important;
+    cursor: pointer !important;
+    position: relative !important;
+    text-transform: uppercase !important;
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 
-  /* TITULO MOON */
+  .destination-tabs button.active::after,
+  .destination-tabs button:hover::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: white;
+    left: 0;
+    bottom: 0;
+  }
+
   .destination-info h1 {
+    order: 2;
     font-size: 56px;
-    margin: 10px 0 10px;
+    margin: 0 0 1px;
     line-height: 1;
   }
 
-  /* TEXTO */
   .destination-info p {
-    font-size: 14px;
+    order: 3;
+    font-size: 15px;
     line-height: 1.7;
-    max-width: 300px;
-    margin: 0 auto;
+    max-width: 327px;
+    margin: 0 auto 32px;
     color: #d0d6f9;
   }
 
-  /* LINHA DIVISÓRIA */
   .destination-stats {
+    order: 4;
     width: 100%;
-    max-width: 320px;
+    max-width: 327px;
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    margin: 30px auto 0;
-    padding-top: 25px;
+    gap: 32px;
+    margin: 0 auto;
+    padding-top: 32px;
     border-top: 1px solid #383b4b;
   }
 
   .destination-stats span {
-    font-size: 12px;
-    letter-spacing: 2px;
+    font-size: 14px;
+    letter-spacing: 2.36px;
     color: #d0d6f9;
   }
 
   .destination-stats strong {
-    font-size: 18px;
-    margin-top: 8px;
+    font-size: 28px;
+    margin-top: 12px;
     display: block;
   }
 }
